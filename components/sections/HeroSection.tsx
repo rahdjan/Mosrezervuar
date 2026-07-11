@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FactoryIllustration } from "@/components/illustrations";
 import { IconArrowRight } from "@/components/icons";
-import { siteConfig } from "@/lib/site-config";
 
 const heroLines = ["РЕЗЕРВУАРЫ.", "ТРУБЫ.", "МЕТАЛЛ."];
 
@@ -28,7 +27,8 @@ export function HeroSection() {
             ))}
           </h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-graphite">
-            Производство под заказ с {siteConfig.foundedYear} года.
+            Проектирование, изготовление и монтаж резервуарного оборудования, дымовых труб и
+            металлоконструкций под ключ.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Button

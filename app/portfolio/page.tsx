@@ -9,7 +9,12 @@ export const metadata: Metadata = {
     "Реализованные проекты МосРезервуар: резервуары РВС и РГСН, дымовые трубы, силосы для асфальтобетонных заводов и металлоконструкции.",
 };
 
+const FEATURED_ID = "gal-75";
+
 export default function PortfolioPage() {
+  const featured = projects.find((p) => p.id === FEATURED_ID);
+  const rest = projects.filter((p) => p.id !== FEATURED_ID);
+
   return (
     <>
       <PageHeader
@@ -21,7 +26,8 @@ export default function PortfolioPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 lg:py-24">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project) => (
+            {featured && <ProjectCard key={featured.id} project={featured} featured />}
+            {rest.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>

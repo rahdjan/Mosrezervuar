@@ -23,6 +23,28 @@ import {
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-steel-dark/95 backdrop-blur-md">
+      {/* Top contact bar */}
+      <div className="hidden border-b border-white/10 md:block">
+        <div className="mx-auto flex h-9 max-w-7xl items-center justify-end gap-5 px-4 md:px-8">
+          {siteConfig.phones.map((phone) => (
+            <a
+              key={phone.tel}
+              href={`tel:${phone.tel}`}
+              className="font-mono text-[13px] font-medium leading-none text-white/80 transition-colors hover:text-white"
+            >
+              {phone.display}
+            </a>
+          ))}
+          <span className="h-3 w-px bg-white/15" aria-hidden="true" />
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="font-mono text-[13px] leading-none text-white/80 transition-colors hover:text-white"
+          >
+            {siteConfig.email}
+          </a>
+        </div>
+      </div>
+
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:px-8">
         <Link href="/" className="flex items-center gap-2 text-white">
           <IconLogoMark className="h-7 w-7 text-rust" />
@@ -68,18 +90,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-5 lg:flex">
-          <div className="hidden flex-col items-end gap-0.5 xl:flex">
-            {siteConfig.phones.map((phone) => (
-              <a
-                key={phone.tel}
-                href={`tel:${phone.tel}`}
-                className="font-mono text-sm font-medium leading-none text-white/85 transition-colors hover:text-white"
-              >
-                {phone.display}
-              </a>
-            ))}
-          </div>
+        <div className="hidden lg:block">
           <Button
             className="rounded-sm bg-rust px-4 text-sm font-medium text-white hover:bg-rust-light"
             render={
@@ -154,6 +165,12 @@ export function Header() {
                     {phone.display}
                   </a>
                 ))}
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="font-mono text-sm text-white/70 transition-colors hover:text-rust-light"
+                >
+                  {siteConfig.email}
+                </a>
               </div>
               <Button
                 className="w-full rounded-sm bg-rust text-white hover:bg-rust-light"

@@ -46,14 +46,38 @@ export default function ContactsPage() {
 
             <div className="mt-8">
               <p className="font-mono text-xs uppercase tracking-widest text-graphite">
-                Email
+                Email для заказов
               </p>
               <a
-                href={`mailto:${siteConfig.email}`}
+                href={`mailto:${siteConfig.emails.orders}`}
                 className="mt-3 inline-block font-mono text-2xl text-rust transition-colors hover:text-rust-light sm:text-3xl"
               >
-                {siteConfig.email}
+                {siteConfig.emails.orders}
               </a>
+              <div className="mt-4 flex flex-col gap-1 font-mono text-sm text-graphite">
+                <a href={`mailto:${siteConfig.emails.supply}`} className="hover:text-rust">
+                  {siteConfig.emails.supply} — отдел снабжения
+                </a>
+                <a href={`mailto:${siteConfig.emails.accounting}`} className="hover:text-rust">
+                  {siteConfig.emails.accounting} — бухгалтерия
+                </a>
+                <a href={`mailto:${siteConfig.emails.hr}`} className="hover:text-rust">
+                  {siteConfig.emails.hr} — отдел кадров
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <p className="font-mono text-xs uppercase tracking-widest text-graphite">Офис</p>
+              <p className="mt-3 text-base leading-relaxed text-ink">{siteConfig.address}</p>
+            </div>
+
+            <div className="mt-8">
+              <p className="font-mono text-xs uppercase tracking-widest text-graphite">
+                График работы
+              </p>
+              <p className="mt-3 text-base text-ink">{siteConfig.workingHours}</p>
+              <p className="mt-1 text-sm text-graphite">Заявки на почту принимаются круглосуточно.</p>
             </div>
           </div>
 
@@ -64,7 +88,7 @@ export default function ContactsPage() {
                 className="h-full w-full"
                 preserveAspectRatio="xMidYMid meet"
                 role="img"
-                aria-label="Схема расположения производственной площадки"
+                aria-label="Схема расположения офиса на Волоколамском шоссе, 108"
               >
                 <defs>
                   <pattern id="map-grid" width="25" height="25" patternUnits="userSpaceOnUse">
@@ -84,7 +108,7 @@ export default function ContactsPage() {
                   fill="#6B7C8D"
                   letterSpacing="1"
                 >
-                  МОСКВА, ПРОИЗВОДСТВЕННАЯ ПЛОЩАДКА
+                  МОСКВА · ВОЛОКОЛАМСКОЕ Ш., 108
                 </text>
               </svg>
             </div>
@@ -119,6 +143,10 @@ export default function ContactsPage() {
                 <div className="flex flex-wrap justify-between gap-2 border-b border-line pb-3">
                   <dt className="text-graphite">Полное наименование</dt>
                   <dd className="text-right">{siteConfig.fullName}</dd>
+                </div>
+                <div className="flex flex-wrap justify-between gap-2 border-b border-line pb-3">
+                  <dt className="text-graphite">Юридическое лицо</dt>
+                  <dd className="text-right">{siteConfig.legalName}</dd>
                 </div>
                 <div className="flex flex-wrap justify-between gap-2 border-b border-line pb-3">
                   <dt className="text-graphite">ИНН</dt>

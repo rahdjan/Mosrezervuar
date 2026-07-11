@@ -5,22 +5,28 @@ export const siteConfig = {
   description:
     "Производство резервуаров, дымовых труб, силосов и металлоконструкций любой сложности. Проектирование, изготовление, монтаж и обслуживание под ключ.",
   url: "https://mzrv.ru",
+  legalName: "ООО «МОСРЕЗЕРВУАР»",
   email: "zakaz@mzrv.ru",
+  emails: {
+    orders: "zakaz@mzrv.ru",
+    supply: "snab@mzrv.ru",
+    accounting: "buh@mzrv.ru",
+    hr: "rabota@mzrv.ru",
+  },
   phones: [
     { display: "8 (495) 755-39-01", tel: "+74957553901" },
     { display: "8 (499) 755-62-12", tel: "+74997556212" },
   ],
-  foundedYear: 2014,
+  address: "г. Москва, Волоколамское шоссе, д. 108, эт. цок., пом. VIII, к. 2, оф. 76",
+  workingHours: "Пн–Пт, 9:00–19:00",
   legal: {
     inn: "7733899462",
     ogrn: "5147746255113",
     registeredAt: "21.10.2014",
   },
   stats: {
-    yearsOnMarket: "10+",
-    projectsDone: "500+",
-    productTypes: "10+",
-    maxVolume: "200 м³",
+    // Максимальный объём резервуара из каталога (см. lib/data/categories.ts, диапазон РВС).
+    maxVolume: "20 000 м³",
   },
 } as const;
 

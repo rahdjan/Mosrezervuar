@@ -13,8 +13,10 @@ export function StatCounter({ value, label }: StatCounterProps) {
   const isInView = useInView(ref, { once: true, margin: "-40px" });
   const [display, setDisplay] = useState("0");
 
-  const match = value.match(/^(\d+(?:[.,]\d+)?)(.*)$/);
-  const target = match ? Number(match[1].replace(",", ".")) : 0;
+  // Число может содержать пробелы-разделители тысяч ("20 000 м³"); суффикс
+  // сохраняем как есть, чтобы "70+" шло без пробела, а "20 000 м³" — с пробелом.
+  const match = value.match(/^(\d+(?:[\s ]\d{3})*(?:[.,]\d+)?)(.*)$/);
+  const target = match ? Number(match[1].replace(/[\s ]/g, "").replace(",", ".")) : 0;
   const suffix = match ? match[2] : "";
 
   useEffect(() => {
@@ -22,7 +24,7 @@ export function StatCounter({ value, label }: StatCounterProps) {
     const controls = animate(0, target, {
       duration: 1.4,
       ease: "easeOut",
-      onUpdate: (latest) => setDisplay(Math.round(latest).toString()),
+      onUpdate: (latest) => setDisplay(Math.round(latest).toLocaleString("ru-RU")),
     });
     return () => controls.stop();
   }, [isInView, target]);

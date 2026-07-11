@@ -16,8 +16,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
-              {siteConfig.fullName} ({siteConfig.shortName}). Производство резервуаров, дымовых
-              труб, силосов и металлоконструкций с {siteConfig.foundedYear} года.
+              {siteConfig.fullName} ({siteConfig.shortName}). Производство и монтаж резервуаров,
+              дымовых труб, силосов и металлоконструкций.
             </p>
           </div>
 
@@ -65,12 +65,13 @@ export function Footer() {
               <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-white">
                 {siteConfig.email}
               </a>
-              <p>Москва, производственная площадка</p>
+              <p>Москва, Волоколамское ш., 108</p>
+              <p className="text-white/50">{siteConfig.workingHours}</p>
               <Link
                 href="/contacts"
                 className="inline-flex font-medium text-rust-light transition-colors hover:text-rust"
               >
-                Оставить заявку →
+                Все контакты →
               </Link>
             </div>
           </div>
@@ -78,7 +79,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 font-mono text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © 2014–2025 {siteConfig.name}. {siteConfig.fullName}.
+            © 2021 {siteConfig.legalName}. {siteConfig.fullName}.
           </p>
           <p>ИНН {siteConfig.legal.inn} · ОГРН {siteConfig.legal.ogrn}</p>
         </div>

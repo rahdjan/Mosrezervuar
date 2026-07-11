@@ -48,10 +48,16 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: siteConfig.name,
-  legalName: siteConfig.fullName,
+  legalName: siteConfig.legalName,
   url: siteConfig.url,
   email: siteConfig.email,
-  foundingDate: "2014-10-21",
+  telephone: siteConfig.phones.map((p) => p.tel),
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Волоколамское шоссе, д. 108, эт. цок., пом. VIII, к. 2, оф. 76",
+    addressLocality: "Москва",
+    addressCountry: "RU",
+  },
   taxID: siteConfig.legal.inn,
   description: siteConfig.description,
 };
