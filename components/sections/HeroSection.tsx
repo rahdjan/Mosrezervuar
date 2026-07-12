@@ -3,17 +3,39 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { FactoryIllustration } from "@/components/illustrations";
 import { IconArrowRight } from "@/components/icons";
 
 const heroLines = ["РЕЗЕРВУАРЫ.", "ТРУБЫ.", "МЕТАЛЛ."];
 
 export function HeroSection() {
   return (
-    <section className="overflow-hidden bg-steel-dark">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-16 md:px-8 lg:grid-cols-[1.2fr_1fr] lg:gap-12 lg:py-24">
+    <section className="relative isolate min-h-[560px] overflow-hidden bg-steel-dark hero-grid lg:min-h-[640px]">
+      {/* Chimney photo (full-bleed right). Black background is dropped via screen blend. */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-full sm:w-[72%] lg:w-[54%]">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/hero-chimney.jpg"
+          alt="Промышленная дымовая труба с дымовым шлейфом"
+          className="hero-chimney-blend h-full w-full object-cover object-top"
+        />
+        {/* Animated steam rising from the chimney mouth */}
+        <div className="absolute left-[36%] top-[13%] h-40 w-40">
+          <span className="hero-smoke__puff" />
+          <span className="hero-smoke__puff" />
+          <span className="hero-smoke__puff" />
+          <span className="hero-smoke__puff" />
+          <span className="hero-smoke__puff" />
+        </div>
+      </div>
+
+      {/* Left gradient for text legibility + bottom fade into the page */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-steel-dark from-25% via-steel-dark/85 to-transparent lg:via-steel-dark/30" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-steel-dark to-transparent" />
+
+      {/* Content */}
+      <div className="relative z-10 mx-auto grid min-h-[560px] max-w-7xl grid-cols-1 items-center gap-10 px-4 py-20 md:px-8 lg:min-h-[640px] lg:grid-cols-[1.1fr_1fr] lg:py-28">
         <div>
-          <h1 className="font-display text-6xl font-black uppercase leading-[0.95] tracking-[-0.02em] text-white sm:text-7xl lg:text-[96px]">
+          <h1 className="font-display text-6xl font-black uppercase leading-[0.95] tracking-[-0.02em] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.4)] sm:text-7xl lg:text-[96px]">
             {heroLines.map((line, i) => (
               <motion.span
                 key={line}
@@ -49,9 +71,7 @@ export function HeroSection() {
             />
           </div>
         </div>
-        <div className="relative mx-auto aspect-square w-full max-w-md lg:mx-0 lg:aspect-auto lg:h-full lg:max-w-none">
-          <FactoryIllustration className="h-full w-full" />
-        </div>
+        <div className="hidden lg:block" aria-hidden="true" />
       </div>
     </section>
   );
