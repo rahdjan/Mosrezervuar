@@ -79,7 +79,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 font-mono text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © 2021 {siteConfig.legalName}. {siteConfig.fullName}.
+            © {new Date().getFullYear()} {siteConfig.legalName}. {siteConfig.fullName}.
           </p>
           <p>ИНН {siteConfig.legal.inn} · ОГРН {siteConfig.legal.ogrn}</p>
         </div>
