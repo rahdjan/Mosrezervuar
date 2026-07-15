@@ -14,7 +14,7 @@ import { Slider } from "@/components/ui/slider";
 import { categories, type CategoryId } from "@/lib/data/categories";
 import { products as allProducts } from "@/lib/data/products";
 
-const MAX_VOLUME = 20000;
+const MAX_VOLUME = 5000;
 
 const materialFilters = [
   { id: "carbon", label: "Углеродистая сталь", test: /углеродист|ст3|09г2с/i },
