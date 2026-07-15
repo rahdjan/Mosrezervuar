@@ -1,15 +1,15 @@
-import { IconCertificate, IconGauge, IconKeyTurn } from "@/components/icons";
+import { IconGauge, IconKeyTurn, IconRuble } from "@/components/icons";
 
 const reasons = [
+  {
+    icon: IconRuble,
+    title: "Низкая цена",
+    text: "Гарантируем низкую и прозрачную цену на всех этапах производства",
+  },
   {
     icon: IconGauge,
     title: "Высокотехнологичное производство",
     text: "Собственная производственная площадка, современное сварочное и метрологическое оборудование, контроль качества на каждом этапе изготовления.",
-  },
-  {
-    icon: IconCertificate,
-    title: "Работаем с госкомпаниями",
-    text: "Опыт исполнения контрактов по 44-ФЗ и 223-ФЗ, полный пакет разрешительной и сопроводительной документации, соответствие ГОСТ и ТУ.",
   },
   {
     icon: IconKeyTurn,

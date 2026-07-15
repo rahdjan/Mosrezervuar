@@ -118,6 +118,16 @@ export function IconGauge(props: IconProps) {
   );
 }
 
+export function IconRuble(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M19 13v22" />
+      <path d="M19 13h7a5.5 5.5 0 0 1 0 11h-7" />
+      <path d="M14 29h14" />
+    </svg>
+  );
+}
+
 export const icons: Record<IconKey, (props: IconProps) => React.ReactElement> = {
   "tank-vertical": IconTankVertical,
   "tank-horizontal": IconTankHorizontal,
