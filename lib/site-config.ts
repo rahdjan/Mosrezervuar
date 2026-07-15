@@ -26,7 +26,7 @@ export const siteConfig = {
   },
   stats: {
     // Максимальный объём резервуара из каталога (см. lib/data/categories.ts, диапазон РВС).
-    maxVolume: "20 000 м³",
+    maxVolume: "5 000 м³",
   },
 } as const;
 
