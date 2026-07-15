@@ -13,7 +13,7 @@ export function SteelStrip() {
     <section className="steel-texture">
       <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-white/10 px-4 sm:h-[140px] sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-8">
         <div className="flex items-center justify-center py-8 sm:py-0">
-          <StatCounter value={'300'} label="реализованных проектов" />
+          <StatCounter value={'300+'} label="реализованных проектов" />
         </div>
         <div className="flex items-center justify-center py-8 sm:py-0">
           <StatCounter value={siteConfig.stats.maxVolume} label="максимальный объём резервуара" />
