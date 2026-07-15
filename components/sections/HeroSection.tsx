@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { IconArrowRight } from "@/components/icons";
 
-const heroLines = ["РЕЗЕРВУАРЫ.", "ТРУБЫ.", "МЕТАЛЛ."];
+const heroLines = ["РЕЗЕРВУАРЫ", "ДЫМОВЫЕ ТРУБЫ", "МЕТАЛЛОКОНСТРУКЦИИ"];
 
 export function HeroSection() {
   return (
