@@ -14,7 +14,7 @@ export default function ContactsPage() {
       <PageHeader
         eyebrow="Контакты"
         title="Свяжитесь с нами"
-        description="Позвоните, напишите на email или используйте реквизиты ниже для оформления договора."
+        description="Позвоните или напишите нам на электронную почту."
       />
 
       <section className="bg-white">
