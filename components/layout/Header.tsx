@@ -54,7 +54,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2 text-white">
           <IconLogoMark className="h-7 w-7 text-rust" />
           <span className="font-display text-lg font-black uppercase leading-none tracking-wide whitespace-nowrap">
-            МосРезервуар
+            Завод МосРезервуар
           </span>
         </Link>
 
@@ -126,7 +126,7 @@ export function Header() {
           >
             <SheetHeader className="border-b border-white/10 px-5 py-4">
               <SheetTitle className="font-display text-lg font-black uppercase tracking-wide text-white">
-                МосРезервуар
+                Завод МосРезервуар
               </SheetTitle>
             </SheetHeader>
             <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4">
