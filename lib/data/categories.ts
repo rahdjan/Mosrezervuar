@@ -179,6 +179,42 @@ export const catalogHighlights: CatalogHighlight[] = [
     href: "/catalog/metallostruktury",
     icon: "frame",
   },
+  {
+    id: "toplivnye-moduli",
+    name: "Топливные модули",
+    shortName: "Мини-АЗС",
+    description: "Мобильные мини-АЗС для хранения и заправки топливом",
+    range: "мобильные",
+    href: "/catalog/toplivnye-moduli",
+    icon: "tank-horizontal",
+  },
+  {
+    id: "bashni-rozhnovskogo",
+    name: "Башни Рожновского",
+    shortName: "Водонапорные башни",
+    description: "Стальные водонапорные башни для систем водоснабжения",
+    range: "от 10 м³",
+    href: "/catalog/bashni-rozhnovskogo",
+    icon: "tank-vertical",
+  },
+  {
+    id: "nasosnye-stancii",
+    name: "Насосные станции",
+    shortName: "Насосные станции",
+    description: "Перекачка воды и жидкостей, корпус из стеклопластика",
+    range: "до 10 000 м³/ч",
+    href: "/catalog/nasosnye-stancii",
+    icon: "gauge",
+  },
+  {
+    id: "rezervuarnoe-oborudovanie",
+    name: "Резервуарное оборудование",
+    shortName: "Оборудование",
+    description: "Огнепреградители, люки, клапаны и фильтры для резервуаров",
+    range: "комплектующие",
+    href: "/catalog/rezervuarnoe-oborudovanie",
+    icon: "equipment",
+  },
 ];
 
 export function getCategory(id: string): Category | undefined {
