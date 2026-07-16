@@ -3,7 +3,11 @@ export type CategoryId =
   | "emkostnye"
   | "silosy"
   | "dymotruby"
-  | "metallostruktury";
+  | "metallostruktury"
+  | "toplivnye-moduli"
+  | "bashni-rozhnovskogo"
+  | "nasosnye-stancii"
+  | "rezervuarnoe-oborudovanie";
 
 export type IconKey =
   | "tank-vertical"
@@ -71,6 +75,42 @@ export const categories: Category[] = [
     description:
       "Производство металлоконструкций любой сложности: каркасы зданий, фермы, колонны, опоры, эстакады, ангары, склады, бункера и промышленные конструкции.",
     icon: "frame",
+  },
+  {
+    id: "toplivnye-moduli",
+    slug: "toplivnye-moduli",
+    name: "Топливные модули",
+    title: "Топливные модули (мини-АЗС)",
+    description:
+      "Мобильные мини-АЗС для хранения и заправки топливом техники — для сельского хозяйства и предприятий с собственным автопарком. Надёжная защита от утечки, быстрый монтаж и лёгкая транспортировка.",
+    icon: "tank-horizontal",
+  },
+  {
+    id: "bashni-rozhnovskogo",
+    slug: "bashni-rozhnovskogo",
+    name: "Башни Рожновского",
+    title: "Водонапорные башни Рожновского",
+    description:
+      "Стальные водонапорные башни объёмом от 10 м³ для регулирования напора и создания запаса воды в системах водоснабжения. Изготовление по типовым и специальным проектам, доставка и монтаж.",
+    icon: "tank-vertical",
+  },
+  {
+    id: "nasosnye-stancii",
+    slug: "nasosnye-stancii",
+    name: "Насосные станции",
+    title: "Насосные станции",
+    description:
+      "Станции для перекачки воды и других жидкостей: повышения давления, канализационные, пожаротушения, для нефтепродуктов и блочно-модульные. Корпус из стеклопластика — герметичность и стойкость к коррозии.",
+    icon: "gauge",
+  },
+  {
+    id: "rezervuarnoe-oborudovanie",
+    slug: "rezervuarnoe-oborudovanie",
+    name: "Резервуарное оборудование",
+    title: "Резервуарное оборудование",
+    description:
+      "Комплектующие и противопожарное оборудование для резервуаров: огнепреградители, световые и замерные люки, пробоотборники, клапаны, фильтры. Для хранения нефтепродуктов на АЗС и промышленных объектах.",
+    icon: "equipment",
   },
 ];
 

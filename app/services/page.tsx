@@ -47,6 +47,30 @@ const services = [
   },
 ];
 
+// Дополнительные услуги — по данным разделов каталога mzrv.ru.
+const extraServices = [
+  {
+    icon: IconKeyTurn,
+    title: "Монтаж",
+    text: "Монтаж металлоконструкций, дымовых труб и газоходов, резервуаров и силосов силами собственных бригад — на объекте заказчика по всей России.",
+  },
+  {
+    icon: IconGauge,
+    title: "Теплоизоляционные работы",
+    text: "Тепловая изоляция трубопроводов, ёмкостей, теплотрасс и промышленных установок с защитным покрытием из металлических листов.",
+  },
+  {
+    icon: IconSteel,
+    title: "Плазменная резка металла",
+    text: "Резка конструкционных, нержавеющих и цветных металлов толщиной от 1 до 100 мм с высокой точностью.",
+  },
+  {
+    icon: IconSteel,
+    title: "Резка металла на ленточнопильном станке",
+    text: "Точная резка листа, профиля, труб и пакетов заготовок любых марок стали — точность 0,1–1,5 мм, ровный рез без заусенцев.",
+  },
+];
+
 export default function ServicesPage() {
   return (
     <>
@@ -119,6 +143,27 @@ export default function ServicesPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-16 md:px-8 lg:py-24">
+          <h2 className="font-display text-4xl font-bold uppercase tracking-tight text-ink sm:text-5xl">
+            Дополнительные услуги
+          </h2>
+          <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2">
+            {extraServices.map(({ icon: Icon, title, text }) => (
+              <div key={title} className="flex gap-4">
+                <Icon className="h-9 w-9 shrink-0 text-rust" strokeWidth={1.5} />
+                <div>
+                  <h3 className="font-display text-lg font-bold uppercase leading-tight text-ink">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-graphite">{text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
