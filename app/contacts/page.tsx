@@ -90,34 +90,12 @@ export default function ContactsPage() {
               className="group relative block aspect-[4/3] w-full overflow-hidden border border-line bg-section transition-colors hover:border-rust"
               aria-label="Открыть расположение офиса на Волоколамском шоссе, 108 в Яндекс.Картах"
             >
-              <svg
-                viewBox="0 0 400 300"
-                className="h-full w-full"
-                preserveAspectRatio="xMidYMid meet"
-                role="img"
-                aria-label="Схема расположения офиса на Волоколамском шоссе, 108"
-              >
-                <defs>
-                  <pattern id="map-grid" width="25" height="25" patternUnits="userSpaceOnUse">
-                    <path d="M0 0H25V25" fill="none" stroke="#D4D9DF" strokeWidth="1" />
-                  </pattern>
-                </defs>
-                <rect width="400" height="300" fill="#F0F2F4" />
-                <rect width="400" height="300" fill="url(#map-grid)" />
-                <circle cx="200" cy="150" r="6" fill="#C0392B" />
-                <circle cx="200" cy="150" r="16" fill="none" stroke="#C0392B" strokeWidth="1.5" strokeDasharray="4 4" />
-                <text
-                  x="200"
-                  y="190"
-                  textAnchor="middle"
-                  fontFamily="var(--font-mono)"
-                  fontSize="13"
-                  fill="#6B7C8D"
-                  letterSpacing="1"
-                >
-                  МОСКВА · ВОЛОКОЛАМСКОЕ Ш., 108
-                </text>
-              </svg>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/office-map.png"
+                alt="Карта: офис МОСРЕЗЕРВУАР, Москва, Волоколамское шоссе, 108"
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+              />
               <span className="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-sm bg-white/95 px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-widest text-ink shadow-sm transition-colors group-hover:text-rust">
                 Открыть в Яндекс.Картах
                 <IconArrowRight className="h-3.5 w-3.5" />
