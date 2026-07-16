@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { IconArrowRight } from "@/components/icons";
 import { PageHeader } from "@/components/sections/PageHeader";
 import { siteConfig } from "@/lib/site-config";
 
@@ -82,7 +83,13 @@ export default function ContactsPage() {
           </div>
 
           <div className="flex flex-col gap-8">
-            <div className="aspect-[4/3] w-full border border-line bg-section">
+            <a
+              href={siteConfig.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative block aspect-[4/3] w-full overflow-hidden border border-line bg-section transition-colors hover:border-rust"
+              aria-label="Открыть расположение офиса на Волоколамском шоссе, 108 в Яндекс.Картах"
+            >
               <svg
                 viewBox="0 0 400 300"
                 className="h-full w-full"
@@ -111,7 +118,11 @@ export default function ContactsPage() {
                   МОСКВА · ВОЛОКОЛАМСКОЕ Ш., 108
                 </text>
               </svg>
-            </div>
+              <span className="absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-sm bg-white/95 px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-widest text-ink shadow-sm transition-colors group-hover:text-rust">
+                Открыть в Яндекс.Картах
+                <IconArrowRight className="h-3.5 w-3.5" />
+              </span>
+            </a>
 
             <div className="border border-line p-6">
               <h2 className="font-mono text-xs uppercase tracking-widest text-graphite">
