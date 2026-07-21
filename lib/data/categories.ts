@@ -129,7 +129,7 @@ export const catalogHighlights: CatalogHighlight[] = [
     name: "Горизонтальные резервуары и баки",
     shortName: "РГСП / РГСН / РГД / БАГВ",
     description: "Подземные, наземные, двустенные и баки-аккумуляторы",
-    range: "от 1 до 5000 м³",
+    range: "1–200 м³ · баки до 5000 м³",
     href: "/catalog/reservuary",
     icon: "tank-horizontal",
   },
