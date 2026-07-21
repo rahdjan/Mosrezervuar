@@ -5,7 +5,6 @@ export type CategoryId =
   | "dymotruby"
   | "metallostruktury"
   | "toplivnye-moduli"
-  | "bashni-rozhnovskogo"
   | "nasosnye-stancii"
   | "rezervuarnoe-oborudovanie";
 
@@ -84,15 +83,6 @@ export const categories: Category[] = [
     description:
       "Мобильные мини-АЗС для хранения и заправки топливом техники — для сельского хозяйства и предприятий с собственным автопарком. Надёжная защита от утечки, быстрый монтаж и лёгкая транспортировка.",
     icon: "tank-horizontal",
-  },
-  {
-    id: "bashni-rozhnovskogo",
-    slug: "bashni-rozhnovskogo",
-    name: "Башни Рожновского",
-    title: "Водонапорные башни Рожновского",
-    description:
-      "Стальные водонапорные башни объёмом от 10 м³ для регулирования напора и создания запаса воды в системах водоснабжения. Изготовление по типовым и специальным проектам, доставка и монтаж.",
-    icon: "tank-vertical",
   },
   {
     id: "nasosnye-stancii",
@@ -187,15 +177,6 @@ export const catalogHighlights: CatalogHighlight[] = [
     range: "мобильные",
     href: "/catalog/toplivnye-moduli",
     icon: "tank-horizontal",
-  },
-  {
-    id: "bashni-rozhnovskogo",
-    name: "Башни Рожновского",
-    shortName: "Водонапорные башни",
-    description: "Стальные водонапорные башни для систем водоснабжения",
-    range: "от 10 м³",
-    href: "/catalog/bashni-rozhnovskogo",
-    icon: "tank-vertical",
   },
   {
     id: "nasosnye-stancii",
