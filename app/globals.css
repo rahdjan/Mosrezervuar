@@ -140,6 +140,60 @@
   .hero-smoke__puff:nth-child(3) { animation-delay: 2.8s; width: 160px; height: 160px; }
   .hero-smoke__puff:nth-child(4) { animation-delay: 4.2s; width: 120px; height: 120px; }
   .hero-smoke__puff:nth-child(5) { animation-delay: 5.6s; width: 145px; height: 145px; }
+
+  /* Появление строк hero-заголовка — чистый CSS, работает и без JS (Safari 16.3).
+     Дефолт (без анимации) — видимое финальное состояние. */
+  .hero-line {
+    animation: hero-fade-up 0.5s ease-out both;
+  }
+}
+
+/* Прогрессивное улучшение для меню: нативный <details>-fallback (класс .no-js-only)
+   виден по умолчанию и работает без JS; JS-drawer (.js-only) скрыт. Когда инлайн
+   feature-detect подтверждает поддержку бандла, на <html> ставится .js-modern —
+   тогда наоборот. Никакого User-Agent, только проверка возможностей. */
+.js-only {
+  display: none;
+}
+:root.js-modern .js-only {
+  display: contents;
+}
+:root.js-modern .no-js-only {
+  display: none;
+}
+
+/* Нативный <details>-fallback мобильного меню (Safari 16.3): гамбургер меняется
+   на крестик при открытии, панель плавно появляется. */
+.menu-fallback[open] .menu-fallback__open {
+  display: none;
+}
+.menu-fallback:not([open]) .menu-fallback__close {
+  display: none;
+}
+.menu-fallback[open] .menu-fallback__panel {
+  animation: menu-fade-in 0.15s ease-out;
+}
+
+@keyframes menu-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes hero-smoke {
@@ -160,5 +214,12 @@
   .hero-smoke__puff {
     animation: none;
     opacity: 0;
+  }
+  /* Без анимации появления — заголовок сразу в финальном (видимом) состоянии. */
+  .hero-line {
+    animation: none;
+  }
+  .menu-fallback[open] .menu-fallback__panel {
+    animation: none;
   }
 }

@@ -73,6 +73,17 @@ export default function RootLayout({
       className={`${robotoCondensed.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white text-ink">
+        {/* Feature-detection (не User-Agent): если браузер поддерживает синтаксис,
+            который использует бандл (class static block — Safari 16.4+), помечаем
+            <html> классом js-modern. По нему CSS показывает JS-меню (Sheet), иначе —
+            остаётся нативный <details>-fallback. Скрипт отдельный от бандла, поэтому
+            выполнится даже на Safari 16.3, где основной бандл не парсится. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'try{new Function("class C{static{}}");Object.hasOwn({},"x");document.documentElement.classList.add("js-modern")}catch(e){}',
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { IconArrowRight } from "@/components/icons";
 
@@ -37,15 +34,11 @@ export function HeroSection() {
         <div>
           <h1 className="font-display text-6xl font-black uppercase leading-[0.95] tracking-[-0.02em] text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.4)] sm:text-7xl lg:text-[96px]">
             {heroLines.map((line, i) => (
-              <motion.span
-                key={line}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-                className="block"
-              >
+              // Анимация появления — чистый CSS (@keyframes hero-fade-up), чтобы
+              // заголовок был виден даже без JS/гидратации (Safari 16.3), а не «opacity:0».
+              <span key={line} className="hero-line block" style={{ animationDelay: `${i * 0.1}s` }}>
                 {line}
-              </motion.span>
+              </span>
             ))}
           </h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-graphite">

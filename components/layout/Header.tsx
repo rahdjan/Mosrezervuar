@@ -5,6 +5,7 @@ import {
   CategoryIcon,
   IconArrowRight,
   IconChevronDown,
+  IconClose,
   IconLogoMark,
   IconMenu,
 } from "@/components/icons";
@@ -107,14 +108,65 @@ export function Header() {
           />
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu (below lg). Нативный <details> работает без JS (Safari 16.3);
+            JS-drawer (Sheet) — когда браузер поддерживает бандл (класс .js-modern). */}
+        <div className="lg:hidden">
+          {/* Fallback без JS: нативное раскрытие меню */}
+          <details className="menu-fallback no-js-only relative">
+            <summary
+              aria-label="Меню"
+              className="flex cursor-pointer list-none items-center justify-center rounded-sm p-2 text-white [&::-webkit-details-marker]:hidden"
+            >
+              <IconMenu className="menu-fallback__open h-6 w-6" />
+              <IconClose className="menu-fallback__close h-6 w-6" />
+            </summary>
+            <div className="menu-fallback__panel absolute right-0 top-full z-50 mt-2 max-h-[calc(100vh-5rem)] w-72 overflow-y-auto rounded-sm border border-white/10 bg-steel-dark p-2 shadow-2xl">
+              <Link
+                href="/catalog"
+                className="block rounded-sm px-3 py-2.5 text-base font-medium text-white"
+              >
+                Каталог
+              </Link>
+              <ul className="mb-2 ml-3 flex flex-col gap-0.5 border-l border-white/10 pl-3">
+                {categories.map((cat) => (
+                  <li key={cat.id}>
+                    <Link
+                      href={`/catalog/${cat.slug}`}
+                      className="flex items-center gap-2.5 rounded-sm px-3 py-2 text-sm text-white/70"
+                    >
+                      <CategoryIcon icon={cat.icon} className="h-4 w-4 shrink-0 text-rust" />
+                      {cat.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              {mainNav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block rounded-sm px-3 py-2.5 text-base font-medium text-white"
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Link
+                href="/contacts"
+                className="mt-2 block rounded-sm bg-rust px-3 py-2.5 text-center text-base font-medium text-white hover:bg-rust-light"
+              >
+                Получить расчёт
+              </Link>
+            </div>
+          </details>
+
+          {/* JS-drawer для современных браузеров */}
+          <div className="js-only">
         <Sheet>
           <SheetTrigger
             render={
               <button
                 type="button"
                 aria-label="Открыть меню"
-                className="flex items-center justify-center rounded-sm p-2 text-white lg:hidden"
+                className="flex items-center justify-center rounded-sm p-2 text-white"
               />
             }
           >
@@ -188,6 +240,8 @@ export function Header() {
             </div>
           </SheetContent>
         </Sheet>
+          </div>
+        </div>
       </div>
     </header>
   );
